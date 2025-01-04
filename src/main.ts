@@ -22,4 +22,16 @@ camera.position.z = 2;
 
 const scene = new THREE.Scene();
 
-renderer.render(scene, camera);
+const geometry = new THREE.IcosahedronGeometry(1, 2);
+const material = new THREE.MeshBasicMaterial({
+  color: 0xccff,
+});
+const mesh = new THREE.Mesh(geometry, material);
+scene.add(mesh);
+
+const tick = () => {
+  globalThis.requestAnimationFrame(tick);
+  renderer.render(scene, camera);
+};
+
+tick();
