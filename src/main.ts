@@ -35,6 +35,7 @@ const wireMaterial = new THREE.MeshBasicMaterial({
   wireframe: true,
 });
 const wireMesh = new THREE.Mesh(geometry, wireMaterial);
+wireMesh.scale.setScalar(1.001);
 mesh.add(wireMesh);
 
 const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
