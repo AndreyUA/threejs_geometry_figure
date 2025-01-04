@@ -23,11 +23,15 @@ camera.position.z = 2;
 const scene = new THREE.Scene();
 
 const geometry = new THREE.IcosahedronGeometry(1, 2);
-const material = new THREE.MeshBasicMaterial({
-  color: 0xccff,
+const material = new THREE.MeshStandardMaterial({
+  color: 0xffffff,
+  flatShading: true,
 });
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
+
+const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
+scene.add(hemisphereLight);
 
 const tick = () => {
   globalThis.requestAnimationFrame(tick);
