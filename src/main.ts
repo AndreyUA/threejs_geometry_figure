@@ -30,6 +30,13 @@ const material = new THREE.MeshStandardMaterial({
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
+const wireMaterial = new THREE.MeshBasicMaterial({
+  color: 0xffffff,
+  wireframe: true,
+});
+const wireMesh = new THREE.Mesh(geometry, wireMaterial);
+scene.add(wireMesh);
+
 const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
 scene.add(hemisphereLight);
 
