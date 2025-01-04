@@ -38,7 +38,7 @@ const wireMesh = new THREE.Mesh(geometry, wireMaterial);
 wireMesh.scale.setScalar(1.001);
 mesh.add(wireMesh);
 
-const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
+const hemisphereLight = new THREE.HemisphereLight(0x0099ff, 0xaa5500, 1);
 scene.add(hemisphereLight);
 
 const tick: FrameRequestCallback = (time: number) => {
