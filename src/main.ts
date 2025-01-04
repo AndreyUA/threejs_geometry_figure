@@ -35,14 +35,15 @@ const wireMaterial = new THREE.MeshBasicMaterial({
   wireframe: true,
 });
 const wireMesh = new THREE.Mesh(geometry, wireMaterial);
-scene.add(wireMesh);
+mesh.add(wireMesh);
 
 const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
 scene.add(hemisphereLight);
 
-const tick = () => {
+const tick: FrameRequestCallback = (time: number) => {
   globalThis.requestAnimationFrame(tick);
+  mesh.rotation.y = time * 0.0001;
   renderer.render(scene, camera);
 };
 
-tick();
+tick(0);
